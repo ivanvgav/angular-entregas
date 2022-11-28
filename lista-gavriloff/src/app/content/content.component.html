@@ -1,6 +1,6 @@
 <div class="container">
     <ol class="container text-center">
-        <li [style.background-color]="approved ? 'bg-primary' : 'bg-danger'" *ngFor="let estudiante of estudiantes">
+        <li [ngClass]="{'bg-primary': estudiante === 'Jorge Perez', 'text-warning' : estudiantes[1]}" *ngFor="let estudiante of estudiantes">
             {{estudiante}}
         </li>
     </ol>

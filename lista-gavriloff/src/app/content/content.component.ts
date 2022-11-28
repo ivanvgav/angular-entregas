@@ -9,7 +9,6 @@ export class ContentComponent implements OnInit {
 
   constructor() { }
 
-  public approved: boolean = true
   public estudiantes: Array<String> = ["Jorge Perez", "Juan Molina", "María Sanchez", "Pedro Bellucci"]
 
   ngOnInit(): void {
