@@ -1,7 +1,16 @@
 <div class="container">
-    <ol class="container text-center">
-        <li [ngClass]="{'bg-primary': estudiante === 'Jorge Perez', 'text-warning' : estudiantes[1]}" *ngFor="let estudiante of estudiantes">
-            {{estudiante}}
-        </li>
-    </ol>
+  <ol class="container text-center">
+    <li
+      [ngClass]="{
+        'bg-primary': estudiante === 'Jorge Perez',
+        'text-warning': estudiante === 'Juan Molina'
+      }"
+      *ngFor="let estudiante of estudiantes"
+    >
+      {{ estudiante }}
+    </li>
+  </ol>
+  <p [ngClass]="'text-center'">
+    El cumpleaños de {{ estudiantes[2] }} es {{ birthday | date }}
+  </p>
 </div>

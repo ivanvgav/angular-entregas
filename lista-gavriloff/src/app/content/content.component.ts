@@ -9,7 +9,9 @@ export class ContentComponent implements OnInit {
 
   constructor() { }
 
-  public estudiantes: Array<String> = ["Jorge Perez", "Juan Molina", "María Sanchez", "Pedro Bellucci"]
+  estudiantes: Array<String> = ["Jorge Perez", "Juan Molina", "María Sanchez", "Pedro Bellucci"]
+
+ birthday = new Date(1993, 6, 4) 
 
   ngOnInit(): void {
   }
