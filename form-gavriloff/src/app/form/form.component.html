@@ -1,1 +1,43 @@
-<p>form works!</p>
+<main>
+  <div class="container">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title mb-3">Formulario de registro</h4>
+        <div class="row">
+          <div class="col-8">
+            <form [formGroup]="registerForm" class="row g-3" (ngSubmit)="onSubmit()">
+              <div class="col-6">
+                <label class="form-label" for="firstName">Nombre</label>
+                <input [formControl]="firstNameControl" class="form-label" type="text">
+                <app-error-helper [control]="firstNameControl"></app-error-helper>
+              </div>
+              <div class="col-6">
+                <label for="lastName" class="form-label">Apellido</label>
+                <input [formControl]="lastNameControl" class="form-label" type="text">
+                <app-error-helper [control]="lastNameControl"></app-error-helper>
+              </div>
+              <div class="col-12">
+                <label for="email" class="form-label" type="email">E-mail</label>
+                <input [formControl]="emailControl" class="form-control" type="email">
+                <app-error-helper [control]="emailControl"></app-error-helper>
+              </div>
+              <div class="col-6">
+                <label for="password" class="form-label">Password</label>
+                <input [formControl]="passwordControl" type="password" class="form-control">
+                <app-error-helper [control]="passwordControl"></app-error-helper>
+              </div>
+              <div class="col-6">
+                <label for="repeatPassword" class="form-label">Repeat Password</label>
+                <input [formControl]="repeatPasswordControl" type="password" class="form-control">
+                <app-error-helper [control]="repeatPasswordControl"></app-error-helper>
+              </div>
+              <div class="col-12 d-flex justify-content">
+                <button class="btn btn-primary" type="submit">Enviar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
