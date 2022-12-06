@@ -12,42 +12,47 @@ import {
   styleUrls: ['./form.component.css'],
 })
 export class RegisterPageComponent {
-
   firstNameControl = new FormControl('', [
     Validators.required,
     Validators.minLength(3),
   ]);
 
   lastNameControl = new FormControl('', [Validators.required]);
-  
-  emailControl = new FormControl('', [Validators.email, Validators.required])
 
-  passwordControl = new FormControl('', [Validators.required, Validators.minLength(6)])
-  repeatPasswordControl = new FormControl('', [Validators.required, Validators.minLength(6)])
-  
-  registerForm = new FormGroup({
-    firstName: this.firstNameControl,
-    lastName: this.lastNameControl,
-    email: this.emailControl,
-    password: this.passwordControl,
-    repeatPassword: this.repeatPasswordControl,
-  },
-  {
-    validators: [
-      this.passwordMatchValidator
-    ]
-  })
+  emailControl = new FormControl('', [Validators.email, Validators.required]);
+
+  passwordControl = new FormControl('', [
+    Validators.required,
+    Validators.minLength(6),
+  ]);
+  repeatPasswordControl = new FormControl('', [
+    Validators.required,
+    Validators.minLength(6),
+  ]);
+
+  registerForm = new FormGroup(
+    {
+      firstName: this.firstNameControl,
+      lastName: this.lastNameControl,
+      email: this.emailControl,
+      password: this.passwordControl,
+      repeatPassword: this.repeatPasswordControl,
+    },
+    {
+      validators: [this.passwordMatchValidator],
+    }
+  );
 
   passwordMatchValidator() {
     return () => {
       if (this.passwordControl.value !== this.repeatPasswordControl.value) {
-        return { passwordsMatch: true } ;
+        return { passwordsMatch: true };
       }
-      return null
-    }
-  } 
+      return null;
+    };
+  }
 
   onSubmit() {
-    console.log(this.registerForm.value)
+    console.log(this.registerForm.value);
   }
 }
