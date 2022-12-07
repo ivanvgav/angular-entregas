@@ -2,8 +2,8 @@
   <div *ngFor="let error of control?.errors | keyvalue">
     <div [ngSwitch]="error.key">
       <div *ngSwitchCase="'required'">Campo requerido</div>
-      <div *ngSwitchCase="'minlegth'">
-        Debe tener por lo menos {{ error.value.requiredLenght }}
+      <div *ngSwitchCase="'minlength'">
+        Debe tener por lo menos {{ error.value.requiredLength }}
       </div>
       <div *ngSwitchCase="'email'">E-mail inválido</div>
       <div *ngSwitchDefault>Error!</div>

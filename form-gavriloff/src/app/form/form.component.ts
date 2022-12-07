@@ -43,7 +43,7 @@ export class RegisterPageComponent {
     }
   );
 
-  passwordMatchValidator() {
+  passwordMatchValidator(group: AbstractControl) {
     return () => {
       if (this.passwordControl.value !== this.repeatPasswordControl.value) {
         return { passwordsMatch: true };
