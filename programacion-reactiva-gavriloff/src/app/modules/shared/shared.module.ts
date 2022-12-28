@@ -8,6 +8,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatCardModule } from '@angular/material/card'
+import { ReactiveFormsModule } from '@angular/forms';
+import { AnimeItemComponent } from 'src/app/shared/components/anime-item/anime-item.component';
 
 
 @NgModule({
@@ -15,6 +18,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     Car1Component,
     Car2Component,
     Car3Component,
+    AnimeItemComponent,
   ],
   imports: [
     CommonModule
@@ -23,11 +27,14 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     Car1Component,
     Car2Component,
     Car3Component,
+    AnimeItemComponent,
+    MatCardModule,
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
     MatButtonModule,
     MatToolbarModule,
+    ReactiveFormsModule,
   ]
 })
 export class SharedModule { }
