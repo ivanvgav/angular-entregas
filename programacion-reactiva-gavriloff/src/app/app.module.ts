@@ -8,6 +8,7 @@ import { PageComponent } from './core/components/page/page.component';
 import { SharedModule } from './modules/shared/shared.module';
 import { AnimePageComponent } from './core/components/anime-page/anime-page.component';
 import { AnimeItemComponent } from './shared/components/anime-item/anime-item.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AnimeItemComponent } from './shared/components/anime-item/anime-item.co
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
